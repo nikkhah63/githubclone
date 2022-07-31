@@ -86,25 +86,22 @@ export default {
 
 
       <!-- </div> -->
-      <div class="row g-3">
-         <div class="col-md-12 " v-for="(item, key) in repository" :key="key">
+      <div class="row g-4">
+         <div class="col-md-12 shadow-sm" v-for="(item, key) in repository" :key="key">
 
             <router-link :to="`/${item.id}`" class="text-decoration-none">
-               <div class="card ">
-                
-
-                  <div class="card-body d-flex flex-cloumn  align-items-center">
-                      <img  :src="`${item.owner?.avatar_url}`"   class="img-fluid img-thumbnail rounded-circle w-10 me-2" />
-                     <div>
-                        <h5 class="card-title text-muted">{{ item.name }} </h5>
-                        <p  class="card-title bold">{{ item.full_name }}</p>                       
-                        <p class="card-text text-muted text-justify ">{{ item.description }}</p>
+               <div class="card border-0">
+                  <div class="card-body d-flex flex-cloumn  align-items-center ">                   
+                     <div class="flex-grow-1">
+                        <p class="card-title bold">
+                           {{ item.full_name }}
+                        </p>
                      </div>
-                     
+                     <div class="text-end pt-0 pb-2">
+                        <a href="#" class="btn btn-outline-primary btn-sm card-link align-self-start right">Details</a>
+                     </div>
                   </div>
-                  <div class="card-body text-end" >
-                     <a href="#" class="btn btn-primary btn-sm card-link align-self-start right">Details</a>
-                  </div>
+
                </div>
             </router-link>
 
